@@ -22,4 +22,4 @@ git_branch() {
 }
 
 # Prompt
-PS1="\n,– \u${GREEN}@${RESET}\h ${CYAN}\W ${GREEN}\$(git_branch)${RESET}\n|\n$(echo $'\`')– ${GREEN} >> ${RESET}"
+PS1="[\u${GREEN}@${RESET}\h] ${CYAN}\W ${GREEN}\$(git_branch)${GREEN} >> ${RESET}"

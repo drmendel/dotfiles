@@ -9,7 +9,7 @@ setxkbmap hu
 
 # Background apps
 picom -f --config ~/.config/picom/picom.conf & # Compositor: transparency, animatinos
-nitrogen --restore & # Wallpaper
+feh --bg-scale ~/.config/background # Wallpaper
 dwmblocks & # Statusbar
 
 # Start window manager

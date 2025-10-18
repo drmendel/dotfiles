@@ -12,6 +12,7 @@ bindkey "\e[3~" delete-char
 alias ls='ls --color=always'
 alias ll='ls -al --color=always'
 alias lscolors='for i in {0..255}; do printf "\x1b[38;5;${i}m%3d " $i; ((i%16==15)) && echo; done; echo -e "\x1b[0m"'
+alias freecad='FreeCAD'
 
 # Starship configuration
 eval "$(starship init zsh)"

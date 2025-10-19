@@ -24,5 +24,21 @@ alias fan_5="sudo bash -c 'echo level 5 > /proc/acpi/ibm/fan'"
 alias fan_6="sudo bash -c 'echo level 6 > /proc/acpi/ibm/fan'"
 alias fan_7="sudo bash -c 'echo level 7 > /proc/acpi/ibm/fan'"
 
+mnas() {
+  sudo -v
+  read "USER?Share username: "
+  read -s "PASS?Share password: "
+  printf "\n"
+  sudo mkdir -p /mnt/nas
+  sudo mount -t cifs //192.168.0.252/nas /mnt/nas -o username="$USER",password="$PASS",vers=3.0,uid=$UID,gid=$(id -g),_netdev
+  cd /mnt/nas
+}
+umnas() {
+  sudo -v
+  cd ~
+  sudo umount /mnt/nas
+  sudo rmdir /mnt/nas
+}
+
 # Starship configuration
 eval "$(starship init zsh)"

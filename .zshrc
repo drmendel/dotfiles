@@ -13,6 +13,16 @@ alias ls='ls --color=always'
 alias ll='ls -al --color=always'
 alias lscolors='for i in {0..255}; do printf "\x1b[38;5;${i}m%3d " $i; ((i%16==15)) && echo; done; echo -e "\x1b[0m"'
 alias freecad='FreeCAD'
+alias fan_auto="sudo bash -c 'echo level auto > /proc/acpi/ibm/fan'"
+alias fan_max="sudo bash -c 'echo level disengaged > /proc/acpi/ibm/fan'"
+alias fan_0="sudo bash -c 'echo level 0 > /proc/acpi/ibm/fan'"
+alias fan_1="sudo bash -c 'echo level 1 > /proc/acpi/ibm/fan'"
+alias fan_2="sudo bash -c 'echo level 2 > /proc/acpi/ibm/fan'"
+alias fan_3="sudo bash -c 'echo level 3 > /proc/acpi/ibm/fan'"
+alias fan_4="sudo bash -c 'echo level 4 > /proc/acpi/ibm/fan'"
+alias fan_5="sudo bash -c 'echo level 5 > /proc/acpi/ibm/fan'"
+alias fan_6="sudo bash -c 'echo level 6 > /proc/acpi/ibm/fan'"
+alias fan_7="sudo bash -c 'echo level 7 > /proc/acpi/ibm/fan'"
 
 # Starship configuration
 eval "$(starship init zsh)"

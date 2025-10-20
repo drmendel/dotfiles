@@ -2,7 +2,7 @@
 
 # Prompt
 format = """[$username](bold fg:#f2cdcd) [](bold fg:#fab387) [$hostname](bold fg:#b4befe) [$directory](bold fg:#fab387)[$sudo](bold fg:#f2cdcd) $character""" # void linux   separator
-right_format = """$all[$localip](bold fg:#b4befe) $battery""" # See Enable Right Prompt
+right_format = """$all${custom.smb}[$localip](bold fg:#b4befe) $battery""" # See Enable Right Prompt
 scan_timeout = 30 # Timeout for starship to scan files (in milliseconds).
 command_timeout = 500 # Timeout for commands executed by starship (in milliseconds).
 add_newline = false # Inserts blank line between shell prompts.
@@ -285,5 +285,28 @@ format = '$user' # The format for the module.
 show_always = true # Always shows the username module.
 disabled = false # Disables the username module.
 aliases	= {} # Translate system usernames to something else.
+
+[custom.nas]
+command = '''[[ "$(realpath "$PWD")" == /mnt/nas* ]] && df -h | grep nas || true'''
+format = " [$output]($style) "
+style = "blue bold"
+
+[custom.smb]
+command = '''df -h . | grep '//' | awk '{gsub(/^\/\//, "", $1); printf "%s [%s/%s] (%s)", $5, $3, $2, $1}' ''' # The command whose output should be printed. The command will be passed on stdin to the shell.
+when='df -h . | grep -q "^//"' # Either a boolean value (true or false, without quotes) or a string shell command used as a condition to show the module. In case of a string, the module will be shown if the shell returns a 0 status code from executing it.
+# require_repo=false # If true, the module will only be shown in paths containing a (git) repository. This option alone is not sufficient display condition in absence of other options.
+# shell=['/bin/zsh', '-c'] # Shell, options
+description='<Shows the network location of the share in the mounted directories>' # The description of the module that is shown when running starship explain.
+unsafe_no_escape=false # When set, command output is not escaped of characters that could be interpreted by the shell.
+# detect_files=[] # The files that will be searched in the working directory for a match.
+# detect_folders=[] # The directories that will be searched in the working directory for a match.
+# detect_extensions=[] # The extensions that will be searched in the working directory for a match.
+symbol='' # The symbol used before displaying the command output.
+style='bold cyan' # The style for the module.
+format='[$symbol($output )]($style)'# The format for the module.
+disabled=false	# Disables this custom module.
+os='linux' # Operating System name on which the module will be shown (unix, linux, macos, windows, ... ) See possible values.
+use_stdin=true # An optional boolean value that overrides whether commands should be forwarded to the shell via the standard input or as an argument. If unset standard input is used by default, unless the shell does not support it (cmd, nushell). Setting this disables shell-specific argument handling.
+ignore_timeout=false # Ignore global command_timeout setting and keep running external commands, no matter how long they take.
 
 # END

@@ -1,0 +1,38 @@
+# .clang-format
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 80
+AllowShortIfStatementsOnASingleLine: false
+SpacesInParentheses: false
+SpaceBeforeParens: ControlStatements
+KeepEmptyLinesAtTheStartOfBlocks: true
+DerivePointerAlignment: false
+PointerAlignment: Left
+SortIncludes: false
+BreakBeforeBraces: Allman
+
+AlignArrayOfStructures: Right
+# struct test demo[] =
+# {
+#     {56,    23, "hello"},
+#     {-1, 93463, "world"},
+#     { 7,     5,    "!!"}
+# };
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  AlignFunctionDeclarations: true
+  AlignFunctionPointers: false
+  PadOperators: true
+
+AlignConsecutiveBitFields: Consecutive
+
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: false

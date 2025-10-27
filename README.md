@@ -1,6 +1,6 @@
 # ▪files
 
-This repo contains my personal configuration files — also known as **dotfiles** — managed using [GNU Stow](https://www.gnu.org/software/stow/). 
+This repo contains my personal configuration files — also known as **dotfiles** — managed using [GNU Stow](https://www.gnu.org/software/stow/).
 
 ## ⚙️ Setup
 
@@ -14,6 +14,7 @@ stow .
 ```
 
 ---
+
 ## 📂 Content
 
 ```bash

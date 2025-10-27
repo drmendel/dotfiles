@@ -25,6 +25,7 @@ alias fan_4="sudo bash -c 'echo level 4 > /proc/acpi/ibm/fan'"
 alias fan_5="sudo bash -c 'echo level 5 > /proc/acpi/ibm/fan'"
 alias fan_6="sudo bash -c 'echo level 6 > /proc/acpi/ibm/fan'"
 alias fan_7="sudo bash -c 'echo level 7 > /proc/acpi/ibm/fan'"
+alias rm='trash'
 
 mnas() {
   sudo -v

@@ -1,0 +1,10 @@
+.config/*
+
+!.config/alacritty/
+!.config/picom/
+!.config/wallpapers/
+!.config/background
+!.config/starship/
+!.config/nvim/
+
+.config/nvim/lazy-lock.json

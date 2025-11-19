@@ -1,0 +1,338 @@
+# Prompt
+format = """[$username](bold fg:#f2cdcd) [](bold fg:#fab387) [$hostname](bold fg:#b4befe) [$directory](bold fg:#fab387)[$sudo](bold fg:#f2cdcd) $character""" # void linux   separator
+right_format = """$all${custom.smb}[$localip](bold fg:#b4befe) $battery""" # See Enable Right Prompt
+scan_timeout = 30 # Timeout for starship to scan files (in milliseconds).
+command_timeout = 500 # Timeout for commands executed by starship (in milliseconds).
+add_newline = false # Inserts blank line between shell prompts.
+# palette = '' # Sets which color palette from palettes to use.
+# palettes = {} # Collection of color palettes that assign colors to user-defined names. Note that color palettes cannot reference their own color definitions.
+follow_symlinks = true # Follows symlinks to check if they're directories; used in modules such as git.
+
+
+# [battery]
+# full_symbol = '󰁹 '
+# charging_symbol = '󰂄 '
+# discharging_symbol = '󰂃 ' 
+# unknown_symbol = '󰁽 '
+# empty_symbol = '󰂎 '
+# [[battery.display]]
+# threshold = 25
+# style = 'bold red'
+# charging_symbol = '󰂄 ' 
+# discharging_symbol = '󰂎 '
+# [[battery.display]]
+# threshold = 35
+# style = 'bold fg:#ff5533'
+# charging_symbol = '󰂄 '
+# discharging_symbol = '󰁻 '
+# [[battery.display]]
+# threshold = 50
+# style = 'bold fg:#ffbd52'
+# charging_symbol = '󰂄 ' 
+# discharging_symbol = '󰁿 '
+# [[battery.display]]
+# threshold = 60
+# style = 'bold green'
+# charging_symbol = '󰂄 ' 
+# discharging_symbol = '󰁿 '
+# [[battery.display]]
+# threshold = 85
+# style = 'bold green'
+# charging_symbol = '󰂄 ' 
+# discharging_symbol = '󰂀 '
+# [[battery.display]]
+# threshold = 90
+# style = 'bold green'
+# charging_symbol = '󰂄 ' 
+# discharging_symbol = '󰂂 '
+# [[battery.display]]
+# threshold = 100
+# style = 'bold green'
+# charging_symbol =  '󰂄 '
+# discharging_symbol = '󰁹 '
+#  NOTE: The battery module does not have a disable option...
+
+
+[c]
+format = 'via [$symbol$name-$version ]($style)'
+symbol = 'C '
+style = 'bold green'
+disabled = false # Disables the c module.
+
+
+[cpp]
+format = 'via [$symbol$name-$version ]($style)'
+symbol = 'C++ '
+style = 'bold green'
+disabled = false # Disables the cpp module.
+
+
+[character]
+format = '$symbol ' # The format string used before the text input.
+success_symbol = '[❯❯](bold green)' # The format string used before the text input if the previous command succeeded.
+error_symbol = '[ ✗](bold red)' # The format string used before the text input if the previous command failed.
+vimcmd_symbol = '[❮](bold green)' # The format string used before the text input if the shell is in vim normal mode.
+vimcmd_replace_one_symbol = '[❮](bold purple)' # The format string used before the text input if the shell is in vim replace_one mode.
+vimcmd_replace_symbol = '[❮](bold purple)' # The format string used before the text input if the shell is in vim replace mode.
+vimcmd_visual_symbol = '[❮](bold yellow)' # The format string used before the text input if the shell is in vim visual mode.
+disabled = false # Disables the character module.	
+
+
+[cmake]
+format = 'via [$symbol(cmake-$version )]($style)'
+symbol = ' '
+style = 'bold green'
+disabled = false # Disables the cmake module.
+
+
+[cmd_duration]
+min_time = 5000
+show_milliseconds = false
+format = 'underwent [$duration ](bold yellow)'
+style = 'bold yellow'
+show_notifications = false
+disabled = true
+
+
+[container]
+symbol = '⬢ '
+style = 'bold blue dimmed'
+format = '[$symbol \[$name\]]($style) '
+disabled = true
+#  __________________________________________________________________
+# | name	| fedora-toolbox:35	| The name of the container	         |
+# | symbol	|			        | Mirrors the value of option symbol |
+# | style*	|			        | Mirrors the value of option style  |
+# |_________|___________________|____________________________________|
+
+
+[directory]
+truncation_length = 2 # The number of parent folders that the current directory should be truncated to.
+truncate_to_repo = false # Whether or not to truncate to the root of the git repo that you're currently in.
+format = '$path $read_only ' # The format for the module.
+# style = 'bold fg:#94e2d5' # The style for the module.
+disabled = false # Disables the directory module.
+read_only = '' # '󰉐' The symbol indicating current directory is read only.
+# read_only_style = 'bold cyan' # The style for the read only symbol.
+truncation_symbol = '…/' # The symbol to prefix to truncated paths. eg: '…/'
+# before_repo_root_style # The style for the path segment above the root of the git repo. The default value is equivalent to style.
+# repo_root_style # The style for the root of the git repo. The default value is equivalent to style.
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '# The format of a git repo when before_repo_root_style and repo_root_style is defined.
+home_symbol = ' ' # The symbol indicating home directory.
+use_os_path_sep	= true # Use the OS specific path separator instead of always using / (e.g. \ on Windows)
+# substitutions # A table of substitutions to be made to the path.
+fish_style_pwd_dir_length = 0 # The number of characters to use when applying fish shell pwd path logic.
+use_logical_path = true # If true render the logical path sourced from the shell via PWD or --logical-path. If false instead render the physical filesystem path with symlinks resolved.
+
+
+[docker_context]
+format = 'via [$symbol$context]($style) '
+symbol = ' '
+only_with_files = true
+style = 'blue bold'
+disabled = true
+
+
+[git_branch]
+always_show_remote = false
+format = 'on [$symbol$branch(:$remote_branch)]($style) '
+symbol = '  ' 
+style = 'bold purple'
+# truncation_length = 2^63 - 1
+truncation_symbol = '…'
+only_attached = false
+ignore_branches = []
+disabled = false
+
+
+[git_metrics]
+added_style = 'bold green'
+deleted_style = 'bold red'
+only_nonzero_diffs = true
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+ignore_submodules = false
+disabled = false
+
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = '=' # This branch has merge conflicts.
+ahead = '⇡' # The format of ahead
+behind = '⇣' # The format of behind
+diverged = '⇕' #The format of diverged
+up_to_date = '󰩐' # The format of up_to_date
+untracked = '?' # The format of untracked
+stashed = '$' # The format of stashed
+modified = '~' # The format of modified
+staged = '+' # The format of staged
+renamed = '»' # The format of renamed
+deleted = '✘' # The format of deleted
+typechanged = " " # The format of typechanged
+style = 'bold green' # The style for the module.
+ignore_submodules = false # Ignore changes to submodules.
+use_git_executable = false # Do not use gitoxide for computing the status, but use the git executable instead.
+disabled = false # Disables the git_status module.
+
+
+[hostname]
+ssh_only = false # Only show hostname when connected to an SSH session.
+ssh_symbol = ' ' # A format string representing the symbol when connected to SSH session.
+trim_at	= '.' # String that the hostname is cut off at, after the first match. '.' will stop after the first dot. '' will disable any truncation.
+detect_env_vars	= [] # Which environment variable(s) should trigger this module.
+format = '$ssh_symbol $hostname ' # The format for the module.
+# style = 'bold fg:#a6e3a1' # The style for the module.
+aliases = {} # Translate system hostnames to something else. If trim_at is specified, only the first part will be matched and replaced.
+disabled = false # Disables the hostname module.
+
+
+[line_break]
+disabled = false
+
+
+#  NOTE: Customization needed: Do not show 'NetworkUnreachable' if no IP
+[localip]
+ssh_only = false # Only show IP address when connected to an SSH session.
+format = '$localipv4' # The format for the module.
+# style = 'bold yellow' # The style for the module.
+disabled = true # Disables the localip module.
+
+
+[lua]
+format = 'via [$symbol ($version )]($style)' # The format for the module
+version_format = 'v${raw}' # The version format. Available vars are raw, major, minor, & patch
+symbol = '󰢱 Lua' # A format string representing the symbol of Lua.
+detect_extensions = ['lua'] # Which extensions should trigger this module.
+detect_files = ['.lua-version'] # Which filenames should trigger this module.
+detect_folders = ['lua'] # Which folders should trigger this module.
+style = 'bold blue' # The style for the module.
+lua_binary = 'lua' # Configures the lua binary that Starship executes when getting the version.
+disabled = false # Disables the lua module.
+
+
+[memory_usage]
+threshold = 75 # Hide the memory usage unless it exceeds this percentage.
+format = 'via $symbol [${ram}( | ${swap})]($style) ' # The format for the module.
+symbol = ' ' # The symbol used before displaying the memory usage.
+style = 'bold dimmed white' # The style for the module.
+disabled = true # Disables the memory_usage module.
+
+
+[nodejs]
+format = 'via [$symbol($version )]($style)' # The format for the module.
+version_format = 'v${raw}' # The version format. Available vars are raw, major, minor, & patch
+symbol = '' # A format string representing the symbol of Node.js.
+detect_extensions = ['js', 'mjs', 'cjs', 'ts', 'mts', 'cts'] # Which extensions should trigger this module.
+detect_files = ['package.json', '.node-version', '.nvmrc'] # Which filenames should trigger this module.
+detect_folders = ['node_modules'] # Which folders should trigger this module.
+style = 'bold green' # The style for the module.
+not_capable_style = 'bold red' # The style for the module when an engines property in package.json does not match the Node.js version.
+disabled = true # Disables the nodejs module.
+
+
+[python]
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)' # The format for the module.
+version_format = 'v${raw}' # The version format. Available vars are raw, major, minor, & patch
+symbol = ' ' # A format string representing the symbol of Python
+style = 'bold green' # The style for the module.
+pyenv_version_name = false # Use pyenv to get Python version
+pyenv_prefix = 'pyenv' # Prefix before pyenv version display, only used if pyenv is used
+python_binary = ['python', 'python3', 'python2'] # Configures the python binaries that Starship should execute when getting the version.
+detect_extensions = ['py', 'ipynb'] # Which extensions should trigger this module
+detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini'] # Which filenames should trigger this module
+detect_folders = [] # Which folders should trigger this module
+disabled = true # Disables the python module.
+
+
+[rust]
+format = 'via [$symbol($version )]($style)' # The format for the module.
+version_format = 'v${raw}' # The version format. Available vars are raw, major, minor, & patch
+symbol = ' ' # A format string representing the symbol of Rust
+detect_extensions = ['rs'] # Which extensions should trigger this module.
+detect_files = ['Cargo.toml'] # Which filenames should trigger this module.
+detect_folders = [] # Which folders should trigger this module.
+style = 'bold red' # The style for the module.
+disabled = true # Disables the rust module.
+
+
+[shell]
+bash_indicator = '󱆃 ' # A format string used to represent bash.
+fish_indicator = '󰈺 ' # A format string used to represent fish.
+zsh_indicator = 'zsh' # A format string used to represent zsh.
+powershell_indicator = 'psh' # A format string used to represent powershell.
+ion_indicator = 'ion' # A format string used to represent ion.
+elvish_indicator = 'esh' # A format string used to represent elvish.
+tcsh_indicator = 'tsh' # A format string used to represent tcsh.
+xonsh_indicator = 'xsh' # A format string used to represent xonsh.
+cmd_indicator = 'cmd' # A format string used to represent cmd.
+nu_indicator = 'nu' # A format string used to represent nu.
+unknown_indicator = '' # The default value to be displayed when the shell is unknown.
+format = '[$indicator]($style) ' # The format for the module.
+style = 'white bold' # The style for the module.
+disabled = true # Disables the shell module.
+
+
+[status]
+format = '[$symbol$status]($style) ' # The format of the module
+symbol = '❌' # The symbol displayed on program error
+success_symbol = '' # The symbol displayed on program success
+not_executable_symbol = '🚫' # The symbol displayed when file isn't executable
+not_found_symbol = '🔍' # The symbol displayed when the command can't be found
+sigint_symbol = '🧱' # The symbol displayed on SIGINT (Ctrl + c)
+signal_symbol = '⚡' # The symbol displayed on any signal
+style = 'bold red' # The style for the module.
+# success_style		The style used on program success (defaults to style if unset).
+# failure_style		The style used on program failure (defaults to style if unset).
+recognize_signal_code = true # Enable signal mapping from exit code
+map_symbol = false # Enable symbols mapping from exit code
+pipestatus = false # Enable pipestatus reporting
+# pipestatus_separator	|	The symbol used to separate pipestatus segments (supports formatting)
+pipestatus_format = '\[$pipestatus\] => [$symbol$common_meaning$signal_name$maybe_int]($style) ' # The format of the module when the command is a pipeline
+# pipestatus_segment_format # When specified, replaces format when formatting pipestatus segments
+disabled = true # Disables the status module.
+
+
+[sudo]
+format = '$symbol'# The format of the module
+symbol = '󰿗' # The symbol displayed when credentials are cached
+# style = 'bold fg:#89dceb' # The style for the module.
+allow_windows = false # Since windows has no default sudo, default is disabled.
+disabled = false # Disables the sudo module.
+
+
+[time]
+format = '[[󱑍 $time ](fg:#cccccc)]($style)' # The format string for the module.
+use_12hr = false # Enables 12 hour formatting
+time_format = '%H:%M' # The chrono format string used to format the time.
+style = 'bold fg:#cccccc' # The style for the module time
+utc_time_offset = 'local' # Sets the UTC offset to use. Range from -24 < x < 24. Allows floats to accommodate 30/45 minute timezone offsets.
+time_range = '-' # Sets the time range during which the module will be shown. Times must be specified in 24-hours format
+disabled = true # Disables the time module.
+
+
+[username]
+# style_root = 'bold red light' # The style used when the user is root/admin.
+# style_user = 'bold fg:#f2cdcd' # The style used for non-root users.
+detect_env_vars = [] # Which environment variable(s) should trigger this module.
+format = '$user' # The format for the module.
+show_always = true # Always shows the username module.
+aliases	= {} # Translate system usernames to something else.
+disabled = false # Disables the username module.
+
+
+[custom.smb]
+command = '''df -h . | grep '//' | awk '{gsub(/^\/\//, "", $1); printf "%s [%s/%s] (%s)", $5, $3, $2, $1}' ''' # The command whose output should be printed. The command will be passed on stdin to the shell.
+when='df -h . | grep -q "^//"' # Either a boolean value (true or false, without quotes) or a string shell command used as a condition to show the module. In case of a string, the module will be shown if the shell returns a 0 status code from executing it.
+# require_repo=false # If true, the module will only be shown in paths containing a (git) repository. This option alone is not sufficient display condition in absence of other options.
+# shell=['/bin/zsh', '-c'] # Shell, options
+description='<Shows the network location of the share in the mounted directories>' # The description of the module that is shown when running starship explain.
+unsafe_no_escape=false # When set, command output is not escaped of characters that could be interpreted by the shell.
+# detect_files=[] # The files that will be searched in the working directory for a match.
+# detect_folders=[] # The directories that will be searched in the working directory for a match.
+# detect_extensions=[] # The extensions that will be searched in the working directory for a match.
+symbol='' # The symbol used before displaying the command output.
+style='bold fg:#fab387' # The style for the module.
+format='[$symbol($output )]($style)'# The format for the module.
+disabled=false	# Disables this custom module.
+os='linux' # Operating System name on which the module will be shown (unix, linux, macos, windows, ... ) See possible values.
+use_stdin=true # An optional boolean value that overrides whether commands should be forwarded to the shell via the standard input or as an argument. If unset standard input is used by default, unless the shell does not support it (cmd, nushell). Setting this disables shell-specific argument handling.
+ignore_timeout=false # Ignore global command_timeout setting and keep running external commands, no matter how long they take.

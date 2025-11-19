@@ -1,0 +1,67 @@
+[terminal.shell]
+program = "/usr/bin/zsh"
+args = ["-l"]
+
+
+[general]
+# import = [ "~/.config/alacritty/themes/carbonfox.toml" ] 
+import = [ "~/.config/alacritty/themes/catppuchin_mocha.toml" ]
+# import = [ "~/.config/alacritty/themes/gruber_darker.toml" ]
+# import = [ "~/.config/alacritty/themes/nordic.toml" ]
+# import = [ "~/.config/alacritty/themes/pastel_dark.toml" ]
+
+
+[window]
+dimensions = { columns = 0, lines = 0 }
+position = "None"
+padding = { x = 5, y = 5 }
+dynamic_padding = false 
+decorations = "Full"
+opacity = 0.75
+blur = true
+startup_mode = "Windowed"
+title = "Alacritty"
+dynamic_title = true
+
+
+[scrolling]
+history = 100000
+multiplier = 5
+
+
+[font]
+normal = { family = "JetBrains Mono Nerd Font", style = "Regular" }
+bold = { family = "JetBrains Mono Nerd Font", style = "Bold" }
+italic = { family = "JetBrains Mono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrains Mono Nerd Font", style = "Bold Italic" }
+size = 7
+
+
+[colors]
+[colors.primary]
+foreground = "#d8d8d8"
+background = "#000000"
+
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+unfocused_hollow = false
+thickness = 0.15
+
+
+[mouse]
+hide_when_typing = true
+
+
+[keyboard]
+bindings = [
+    { key = "PageUp",                       action = "ScrollPageUp" },
+    { key = "PageDown",                     action = "ScrollPageDown" },
+    { key = "PageUp",   mods = "Control",   action = "ScrollHalfPageUp" },
+    { key = "PageDown", mods = "Control",   action = "ScrollHalfPageDown" },
+    { key = "PageUp",   mods = "Shift",     action = "ScrollLineUp" },
+    { key = "PageDown", mods = "Shift",     action = "ScrollLineDown" },
+    { key = "3",        mods = "Control",   action = "IncreaseFontSize" },
+    { key = "2",        mods = "Control",   action = "DecreaseFontSize" },
+    { key = "0",        mods = "Control",   action = "ResetFontSize" },
+] 

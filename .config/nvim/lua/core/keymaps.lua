@@ -49,6 +49,8 @@ vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { desc = "[T]ab [N]ext"})
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { desc = "[T]ab [P]revious"})
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { desc = "[T]ab [X] (close)"})
 
+vim.keymap.set("n", "<leader>tt", "<cmd>lua tt()<CR>", { desc = "[T]erminal [T]oggle" })
+
 vim.keymap.set("n", "<leader>lw", "<cmd>set wrap!<CR>", { desc = "[L]ine [W]rapping (toggle)" })
 
 vim.keymap.set("n", "<leader>dp", function() vim.diagnostic.jump { count = -1, float = true } end, { desc = "[D]iagnostic [P]revious" })

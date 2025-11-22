@@ -4,6 +4,7 @@ require('core.lazy')
 require('custom.terminal')
 
 require("lazy").setup({
+  require("plugins.utils.autopairs"),
   require("plugins.utils.vimbegood"),
   require("plugins.utils.vimfugitive")
 })

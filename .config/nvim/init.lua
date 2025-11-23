@@ -11,6 +11,7 @@ require("lazy").setup({
   require("plugins.utils.vimbegood"),
   require("plugins.utils.vimfugitive"),
   require("plugins.utils.whichkey"),
+  require("plugins.visuals.alpha"),
   require("plugins.visuals.bufferline"),
   require("plugins.visuals.catppuccin"),
   require("plugins.visuals.colorizer"),

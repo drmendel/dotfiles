@@ -10,5 +10,6 @@ require("lazy").setup({
   require("plugins.utils.undotree"),
   require("plugins.utils.vimbegood"),
   require("plugins.utils.vimfugitive"),
-  require("plugins.utils.whichkey")
+  require("plugins.utils.whichkey"),
+  require("plugins.visuals.catppuccin")
 })

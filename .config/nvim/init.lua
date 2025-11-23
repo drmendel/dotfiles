@@ -17,5 +17,6 @@ require("lazy").setup({
   require("plugins.visuals.gitsigns"),
   require("plugins.visuals.indentblankline"),
   require("plugins.visuals.lualine"),
+  require("plugins.visuals.noice"),
   require("plugins.visuals.todocomments")
 })

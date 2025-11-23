@@ -13,5 +13,6 @@ require("lazy").setup({
   require("plugins.utils.whichkey"),
   require("plugins.visuals.catppuccin"),
   require("plugins.visuals.colorizer"),
-  require("plugins.visuals.gitsigns")
+  require("plugins.visuals.gitsigns"),
+  require("plugins.visuals.lualine")
 })

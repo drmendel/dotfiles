@@ -14,5 +14,6 @@ require("lazy").setup({
   require("plugins.visuals.catppuccin"),
   require("plugins.visuals.colorizer"),
   require("plugins.visuals.gitsigns"),
-  require("plugins.visuals.lualine")
+  require("plugins.visuals.lualine"),
+  require("plugins.visuals.todocomments")
 })

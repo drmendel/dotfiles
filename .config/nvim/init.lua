@@ -17,6 +17,7 @@ require("lazy").setup({
   require("plugins.visuals.gitsigns"),
   require("plugins.visuals.indentblankline"),
   require("plugins.visuals.lualine"),
+  require("plugins.visuals.neotree"), --  FIX: Setup better alternative (oil, yazi, neotree)
   require("plugins.visuals.noice"),
   require("plugins.visuals.todocomments")
 })

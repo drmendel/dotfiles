@@ -5,6 +5,7 @@ require('custom.terminal')
 
 require("lazy").setup({
   require("plugins.utils.autopairs"),
+  require("plugins.utils.lsp"),
   require("plugins.utils.telescope"),
   require("plugins.utils.treesitter"),
   require("plugins.utils.undotree"),

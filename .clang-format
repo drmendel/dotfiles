@@ -1,0 +1,32 @@
+BasedOnStyle: LLVM
+
+TabWidth: 4
+IndentWidth: 4
+ColumnLimit: 120
+SortIncludes: false
+SpacesInParentheses: false
+DerivePointerAlignment: false
+KeepEmptyLinesAtTheStartOfBlocks: true
+AllowShortIfStatementsOnASingleLine: true
+
+UseTab: Never
+PointerAlignment: Left
+BreakBeforeBraces: Allman
+AlignArrayOfStructures: Right
+SpaceBeforeParens: ControlStatements
+AlignConsecutiveBitFields: Consecutive
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  PadOperators: true
+  AlignCompound: true
+  AcrossComments: false
+  AcrossEmptyLines: false
+  AlignFunctionPointers: false
+  AlignFunctionDeclarations: true
+
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossComments: true
+  AlignCaseColons: false
+  AcrossEmptyLines: true

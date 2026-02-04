@@ -36,7 +36,7 @@ return {
       cond = hide_in_width,
     }
 
-    require('lualine').setup {
+    require('lualine').setup({
       options = {
         icons_enabled = true,
         theme = 'auto',
@@ -63,6 +63,6 @@ return {
       },
       tabline = {},
       extensions = { 'fugitive' },
-    }
+    })
   end,
 }

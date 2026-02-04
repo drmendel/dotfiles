@@ -1,20 +1,20 @@
 return {
-  "folke/noice.nvim",
-  event = "VeryLazy",
+  'folke/noice.nvim',
+  event = 'VeryLazy',
   opts = {},
   dependencies = {
-    "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
-    "hrsh7th/nvim-cmp",
+    'MunifTanjim/nui.nvim',
+    'rcarriga/nvim-notify',
+    'hrsh7th/nvim-cmp',
   },
   config = function()
-    require("noice").setup({
+    require('noice').setup({
       lsp = {
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
-        }
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
+        },
       },
       presets = {
         bottom_search = true,
@@ -28,21 +28,21 @@ return {
       },
       messages = {
         enabled = true,
-        view = "notify",
-        view_error = "notify",
-        view_warn = "notify",
-        view_history = "messages",
-        view_search = "virtualtext",
+        view = 'notify',
+        view_error = 'notify',
+        view_warn = 'notify',
+        view_history = 'messages',
+        view_search = 'virtualtext',
       },
       routes = {
         {
-          filter = { event = "msg_showmode" },
-          view = "cmdline"
+          filter = { event = 'msg_showmode' },
+          view = 'cmdline',
         },
       },
     })
-    require("notify").setup({
-      background_colour = "#000000"
+    require('notify').setup({
+      background_colour = '#000000',
     })
-  end
+  end,
 }

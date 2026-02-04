@@ -5,7 +5,7 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   config = function()
-    require('bufferline').setup {
+    require('bufferline').setup({
       options = {
         mode = 'buffers',
         themable = true,
@@ -15,7 +15,7 @@ return {
         close_icon = '✗',
         path_components = 1,
         modified_icon = '',
-        left_trunc_marker = '', 
+        left_trunc_marker = '',
         right_trunc_marker = '',
         max_name_length = 30,
         max_prefix_length = 30,
@@ -54,7 +54,7 @@ return {
         background = {},
         indicator_selected = {},
         fill = {},
-      }
-    }
-  end
+      },
+    })
+  end,
 }

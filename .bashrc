@@ -82,6 +82,7 @@ alias fan_7="sudo bash -c 'echo level 7 > /proc/acpi/ibm/fan'"
 
 alias cad='freecad'
 
+alias espinit='. ~/utils/esp-idf/export.sh'
 
 # Colors
 

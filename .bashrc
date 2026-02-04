@@ -116,7 +116,7 @@ mnas() {
     read -s -p "Share password: " NAS_PASS
     sudo mkdir -p /mnt/nas || { echo "Failed to create /mnt/nas. Exiting."; return 1; }
     printf "\nMounting share to /mnt/nas/...\n"
-    sudo mount -t cifs //192.168.0.252/nas /mnt/nas \
+    sudo mount -t cifs //192.168.1.7/nas /mnt/nas \
         -o username="$NAS_USER",password="$NAS_PASS",vers=3.0,uid=$UID,gid=$(id -g),_netdev
     if mountpoint -q /mnt/nas; then
         cd /mnt/nas || return

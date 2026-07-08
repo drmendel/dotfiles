@@ -12,23 +12,22 @@ fi
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
-
 # Sound
 
 pipewire &
-pipewire-pulse &
-wireplumber &
-
 
 # Keyboard layout
 
 setxkbmap hu
 
+# Monitor layout
+
+autorandr -c # --change
 
 # Background apps
 
 picom -f --config ~/.config/picom/picom.conf &      # Compositor: transparency, animations
-feh --bg-scale ~/.config/background                 # Wallpaper
+feh --bg-fill ~/.config/background                 # Wallpaper
 dwmblocks &                                         # Statusbar
 
 

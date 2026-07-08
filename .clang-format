@@ -2,7 +2,7 @@ BasedOnStyle: LLVM
 
 TabWidth: 4
 IndentWidth: 4
-ColumnLimit: 120
+ColumnLimit: 80
 SortIncludes: false
 SpacesInParentheses: false
 DerivePointerAlignment: false
@@ -15,6 +15,30 @@ BreakBeforeBraces: Allman
 AlignArrayOfStructures: Right
 SpaceBeforeParens: ControlStatements
 AlignConsecutiveBitFields: Consecutive
+
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+  AlignPPAndNotPP: true
+
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: true
+
+AllowAllArgumentsOnNextLine: false
+BinPackArguments: false
+BinPackParameters: false
+
+AlignAfterOpenBracket: true
+PenaltyBreakAssignment: 100
+
+Cpp11BracedListStyle: true
 
 AlignConsecutiveAssignments:
   Enabled: true

@@ -55,13 +55,13 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [
-    { key = "PageUp",                       action = "ScrollPageUp" },
-    { key = "PageDown",                     action = "ScrollPageDown" },
-    { key = "PageUp",   mods = "Control",   action = "ScrollHalfPageUp" },
-    { key = "PageDown", mods = "Control",   action = "ScrollHalfPageDown" },
-    { key = "PageUp",   mods = "Shift",     action = "ScrollLineUp" },
-    { key = "PageDown", mods = "Shift",     action = "ScrollLineDown" },
-    { key = "3",        mods = "Control",   action = "IncreaseFontSize" },
-    { key = "2",        mods = "Control",   action = "DecreaseFontSize" },
-    { key = "0",        mods = "Control",   action = "ResetFontSize" },
+    { key = "PageUp",                           action = "ScrollPageUp" },
+    { key = "PageDown",                         action = "ScrollPageDown" },
+    { key = "PageUp",   mods = "Control",       action = "ScrollHalfPageUp" },
+    { key = "PageDown", mods = "Control",       action = "ScrollHalfPageDown" },
+    { key = "PageUp",   mods = "Shift",         action = "ScrollLineUp" },
+    { key = "PageDown", mods = "Shift",         action = "ScrollLineDown" },
+    { key = "+",        mods = "Shift|Control", action = "IncreaseFontSize" },
+    { key = "-",        mods = "Control",       action = "DecreaseFontSize" },
+    { key = "0",        mods = "Control",       action = "ResetFontSize" },
 ] 

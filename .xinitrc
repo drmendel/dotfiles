@@ -12,6 +12,10 @@ fi
 
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
+# Load X profile
+
+[ -f ~/.xprofile ] && . ~/.xprofile
+
 # Sound
 
 pipewire &
